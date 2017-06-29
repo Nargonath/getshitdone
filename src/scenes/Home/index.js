@@ -3,22 +3,31 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './Home.css';
 import TimerForm from 'components/TimerForm';
+import Timer from 'components/Timer';
 
 class Home extends Component {
   constructor(props) {
     super(props);
 
-    this.onValidate = this.onValidate.bind(this);
+    this.state = { task: null };
   }
 
-  onValidate(task) {
-    console.log(task);
+  onTaskCreation = (task) => {
+    this.setState({ task });
+  }
+
+  onTaskCancel = () => {
+    this.setState({ task: null });
   }
 
   render() {
     return (
       <div className="Home">
-        <TimerForm onValidate={this.onValidate}></TimerForm>
+        {this.state.task === null ?
+          <TimerForm onValidate={this.onTaskCreation}></TimerForm>
+        :
+          <Timer task={this.state.task}
+                 onCancel={this.onTaskCancel}></Timer>}
       </div>
     );
   }
