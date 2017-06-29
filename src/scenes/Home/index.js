@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
+
 import logo from './logo.svg';
 import './Home.css';
+import TimerForm from 'components/TimerForm';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    this.onValidate = this.onValidate.bind(this);
+  }
+
+  onValidate(task) {
+    console.log(task);
+  }
+
   render() {
     return (
       <div className="Home">
-        <div className="Home-header">
-          <img src={logo} className="Home-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="Home-intro">
-          To get started, edit <code>src/Home.js</code> and save to reload.
-        </p>
+        <TimerForm onValidate={this.onValidate}></TimerForm>
       </div>
     );
   }
