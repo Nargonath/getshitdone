@@ -8,12 +8,13 @@
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
+    "cross-env": "^5.0.1",
     "react-scripts": "1.0.8"
   },
   "scripts": {
-    "start": "NODE_PATH=src/ react-scripts start",
+    "start": "cross-env NODE_PATH=src/ react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "cross-env NODE_PATH=src/ react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
 }
