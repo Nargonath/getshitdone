@@ -1,2 +1,3 @@
-# time-me
-A lightweight timer to chronometer your work task
+# TimeMe
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
