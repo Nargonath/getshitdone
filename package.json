@@ -4,10 +4,12 @@
   "private": true,
   "homepage": "https://nargonath.github.io/getshitdone",
   "dependencies": {
+    "enzyme": "^2.9.1",
     "gh-pages": "^1.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1"
   },
   "devDependencies": {
     "cross-env": "^5.0.1",
