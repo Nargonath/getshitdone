@@ -1,8 +1,10 @@
 {
-  "name": "time-me",
+  "name": "getshitdone",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nargonath.github.io/getshitdone",
   "dependencies": {
+    "gh-pages": "^1.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
@@ -12,8 +14,10 @@
     "react-scripts": "1.0.8"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "cross-env NODE_PATH=src/ react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env NODE_PATH=src/ react-scripts build",
     "test": "cross-env NODE_PATH=src/ react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
