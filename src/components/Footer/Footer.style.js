@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { primaryColor } from 'styles';
+import { primaryColor, media } from 'styles';
 
 export const StyledFooter = styled.footer`
   height: 50px;
@@ -11,11 +11,13 @@ export const StyledFooter = styled.footer`
   color: white;
   text-align: center;
   background-color: ${primaryColor};
+  padding: 10px;
+  display: flex;
 `;
 
 export const P = styled.p`
   display: inline-block;
-  vertical-align: middle;
+  margin: auto;
 `;
 
 export const A = styled.a`
@@ -31,4 +33,8 @@ export const A = styled.a`
     right: 0;
     bottom: -2px;
   }
+`;
+
+export const Br = styled.br`
+  ${media.laptop`display: none`}
 `;

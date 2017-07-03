@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { func } from 'prop-types';
 
+import { Input, Submit } from './TimerForm.style';
+
 class TimerForm extends Component {
   constructor(props) {
     super(props);
@@ -25,19 +27,19 @@ class TimerForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text"
+        <Input type="text"
                name="name"
                value={this.state.name}
                onChange={this.handleChange}
-               placeholder="Nom de la tâche"/>
+               placeholder="Task name"/>
 
-        <input type="time"
+        <Input type="time"
                name="duration"
                value={this.state.duration}
                onChange={this.handleChange} />
 
-        <input type="submit"
-               value="Valider" />
+        <Submit type="submit"
+               value="Start" />
       </form>
     );
   }

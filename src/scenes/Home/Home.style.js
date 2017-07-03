@@ -18,4 +18,13 @@ export const Root = styled.div`
 
   font-family: 'Open Sans';
   font-weight: 400;
+  padding-bottom: 70px;
+  font-size: 12px;
+`;
+
+export const Logo = styled.img`
+  display: block;
+  margin: 10% auto 5% auto;
+  width: 150px;
+  height: auto;
 `;

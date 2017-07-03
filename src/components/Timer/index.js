@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { func, shape, string } from 'prop-types';
 
 import { zeroPad } from 'services/string';
+import { Button, Counter, TaskName } from './Timer.style';
 
 class Timer extends Component {
   constructor(props) {
@@ -60,15 +61,15 @@ class Timer extends Component {
   render() {
     return (
       <div>
-        <p>{this.state.name}</p>
-        <div>{this.formatCount()}</div>
+        <TaskName>{this.state.name}</TaskName>
+        <Counter>{this.formatCount()}</Counter>
 
         {this.state.timerID !== null ?
-          <button type="button" onClick={this.stopTick}>Stop</button>
+          <Button type="button" onClick={this.stopTick}>Stop</Button>
         :
           <div>
-            <button type="button" onClick={this.startTick}>Reprendre</button>
-            <button type="button" onClick={this.props.onCancel}>Annuler</button>
+            <Button type="button" onClick={this.startTick}>Reprendre</Button>
+            <Button type="button" onClick={this.props.onCancel}>Annuler</Button>
           </div>}
 
       </div>

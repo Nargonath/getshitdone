@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
 import logo from './logo.svg';
-import './Home.css';
 import TimerForm from 'components/TimerForm';
 import Timer from 'components/Timer';
 import Footer from 'components/Footer';
-import { Root } from './Home.style';
+import { Root, Logo } from './Home.style';
 
 class Home extends Component {
   constructor(props) {
@@ -25,6 +24,9 @@ class Home extends Component {
   render() {
     return (
       <Root>
+
+        <Logo src={logo} alt="getshitdone logo timer task"/>
+        <h1 hidden>Getshitdone</h1>
 
         {this.state.task === null ?
           <TimerForm onValidate={this.onTaskCreation}></TimerForm>
