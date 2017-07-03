@@ -1,10 +1,14 @@
 import React from 'react';
 
+import { StyledFooter, P, A } from './Footer.style';
+
 function Footer() {
   return (
-    <footer>
-      Created with &hearts; by <a href="https://twitter.com/jonas_pauthier">@Jonas_Pauthier</a> (code) and <a href="http://jeremy-fermine.com/">Jeremy Fermine</a> (design)
-    </footer>
+    <StyledFooter>
+      <P>
+        Created with &hearts; by <A href="https://twitter.com/jonas_pauthier">@Jonas_Pauthier</A> (code) and <A href="http://jeremy-fermine.com/">Jeremy Fermine</A> (design)
+      </P>
+    </StyledFooter>
   );
 }
 
