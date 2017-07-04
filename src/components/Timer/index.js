@@ -25,15 +25,36 @@ class Timer extends Component {
   }
 
   tick() {
-    this.setState(({ seconds }) => {
+    this.setState(({ seconds, name }) => {
       if (seconds === 0) {
         clearInterval(this.state.timerID);
+        this.showNotification(name);
       }
 
       return {
         seconds: seconds > 0 ? seconds - 1 : 0,
       };
     });
+  }
+
+  showNotification(taskName) {
+    if (!("Notification" in window)) {
+      return null;
+    }
+
+    if (Notification.permission === 'granted') {
+      new Notification(`${taskName} is over!`);
+    } else if (Notification.permission !== 'denied') {
+      Notification.requestPermission((permission) => {
+        if(!('permission' in Notification)) {
+          Notification.permission = permission;
+        }
+
+        if (permission === 'granted') {
+          new Notification(`${taskName} is over!`);
+        }
+      });
+    }
   }
 
   startTick = () => {
