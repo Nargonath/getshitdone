@@ -1,9 +1,10 @@
 import { css } from 'styled-components';
 
 const sizes = {
+  big: 1600,
   desktop: 1024,
   laptop: 768,
-  tablet: 420,
+  tablet: 430,
 };
 
 // taken from: https://github.com/styled-components/styled-components/blob/master/docs/tips-and-tricks.md#media-templates

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { primaryColor } from 'styles';
+import { primaryColor, media } from 'styles';
 
 export const Input = styled.input`
   display: block;
@@ -14,6 +14,13 @@ export const Input = styled.input`
   &:placeholder-shown {
     color: grey;
   }
+
+  ${
+    media.tablet`
+      width: 300px;
+      margin: 40px auto;
+    `
+  }
 `;
 
 export const Submit = styled.input`
@@ -26,4 +33,11 @@ export const Submit = styled.input`
   margin: auto;
   width: 80%;
   font-size: 1.5em;
+
+  ${
+    media.tablet`
+      margin: 40px auto;
+      width: 300px;
+    `
+  }
 `;

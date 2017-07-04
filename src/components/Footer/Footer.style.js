@@ -13,6 +13,13 @@ export const StyledFooter = styled.footer`
   background-color: ${primaryColor};
   padding: 10px;
   display: flex;
+  font-weight: 100;
+
+  ${
+    media.tablet`
+      height: 30px;
+    `
+  }
 `;
 
 export const P = styled.p`

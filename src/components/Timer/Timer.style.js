@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { primaryColor, secondaryColor } from 'styles';
+import { primaryColor, secondaryColor, media } from 'styles';
 
 export const Button = styled.button`
   background-color: ${primaryColor};
@@ -12,6 +12,13 @@ export const Button = styled.button`
   margin: 0 auto 10px auto;
   width: 80%;
   font-size: 1.5em;
+
+  ${
+    media.tablet`
+      width: 300px;
+      margin: 0 auto 10px auto;
+    `
+  }
 `;
 
 export const Counter = styled.div`
@@ -20,6 +27,12 @@ export const Counter = styled.div`
   text-align: center;
   font-size: 5em;
   margin-bottom: 5%;
+
+  ${
+    media.tablet`
+      margin-bottom: 20px;
+    `
+  }
 `;
 
 export const TaskName = styled.p`
