@@ -25,7 +25,7 @@ class Timer extends Component {
   }
 
   tick() {
-    this.setState(({ seconds, name }) => {
+    this.setState(({ seconds, name, timerID }) => {
       if (seconds === 0) {
         clearInterval(this.state.timerID);
         this.showNotification(name);
@@ -33,6 +33,7 @@ class Timer extends Component {
 
       return {
         seconds: seconds > 0 ? seconds - 1 : 0,
+        timerID: seconds === 0 ? null : timerID,
       };
     });
   }
@@ -85,13 +86,17 @@ class Timer extends Component {
         <TaskName>{this.state.name}</TaskName>
         <Counter>{this.formatCount()}</Counter>
 
-        {this.state.timerID !== null ?
+        {this.state.timerID !== null && this.state.seconds > 0 ?
           <Button type="button" onClick={this.stopTick}>Stop</Button>
         :
-          <div>
-            <Button type="button" onClick={this.startTick}>Restart</Button>
-            <Button type="button" onClick={this.props.onCancel}>Cancel</Button>
-          </div>}
+          this.state.timerID === null && this.state.seconds === 0 ?
+            <Button type="button" onClick={this.props.onCancel}>New task</Button>
+          :
+            <div>
+              <Button type="button" onClick={this.startTick}>Restart</Button>
+              <Button type="button" onClick={this.props.onCancel}>Cancel</Button>
+            </div>
+        }
 
       </div>
     );
