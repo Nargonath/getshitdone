@@ -13,6 +13,20 @@ class Home extends Component {
     this.state = { task: null };
   }
 
+  componentDidMount() {
+    if (!("Notification" in window)) {
+      return null;
+    }
+
+    if (Notification.permission !== 'denied') {
+      Notification.requestPermission((permission) => {
+        if(!('permission' in Notification)) {
+          Notification.permission = permission;
+        }
+      });
+    }
+  }
+
   onTaskCreation = (task) => {
     this.setState({ task });
   }

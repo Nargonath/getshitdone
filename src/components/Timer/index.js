@@ -45,16 +45,6 @@ class Timer extends Component {
 
     if (Notification.permission === 'granted') {
       new Notification(`${taskName} is over!`);
-    } else if (Notification.permission !== 'denied') {
-      Notification.requestPermission((permission) => {
-        if(!('permission' in Notification)) {
-          Notification.permission = permission;
-        }
-
-        if (permission === 'granted') {
-          new Notification(`${taskName} is over!`);
-        }
-      });
     }
   }
 
