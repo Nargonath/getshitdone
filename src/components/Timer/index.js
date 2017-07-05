@@ -21,20 +21,16 @@ class Timer extends Component {
   }
 
   componentWillUnmount() {
-    clearInterval(this.state.timerID);
+    this.stopTick();
   }
 
   tick() {
-    this.setState(({ seconds, name, timerID }) => {
+    this.setState(({ seconds, name }) => {
       if (seconds === 0) {
-        clearInterval(this.state.timerID);
         this.showNotification(name);
       }
 
-      return {
-        seconds: seconds > 0 ? seconds - 1 : 0,
-        timerID: seconds === 0 ? null : timerID,
-      };
+      return { seconds: seconds - 1 };
     });
   }
 
@@ -63,11 +59,12 @@ class Timer extends Component {
   }
 
   formatCount() {
-    const totalSec = this.state.seconds;
+    const op = this.state.seconds < 0 ? '- ' : '';
+    const totalSec = Math.abs(this.state.seconds);
     const hours = Math.floor(totalSec / 3600);
     const minutes = Math.floor((totalSec - hours * 3600) / 60);
     const seconds = totalSec - (hours * 3600 + minutes * 60);
-    return `${zeroPad(hours)}:${zeroPad(minutes)}:${zeroPad(seconds)}`;
+    return `${op}${zeroPad(hours)}:${zeroPad(minutes)}:${zeroPad(seconds)}`;
   }
 
   render() {
@@ -76,16 +73,13 @@ class Timer extends Component {
         <TaskName>{this.state.name}</TaskName>
         <Counter>{this.formatCount()}</Counter>
 
-        {this.state.timerID !== null && this.state.seconds > 0 ?
+        {this.state.timerID !== null ?
           <Button type="button" onClick={this.stopTick}>Stop</Button>
         :
-          this.state.timerID === null && this.state.seconds === 0 ?
-            <Button type="button" onClick={this.props.onCancel}>New task</Button>
-          :
-            <div>
-              <Button type="button" onClick={this.startTick}>Restart</Button>
-              <Button type="button" onClick={this.props.onCancel}>Cancel</Button>
-            </div>
+          <div>
+            <Button type="button" onClick={this.startTick}>Restart</Button>
+            <Button type="button" onClick={this.props.onCancel}>Cancel</Button>
+          </div>
         }
 
       </div>
