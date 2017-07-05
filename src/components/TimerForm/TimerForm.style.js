@@ -33,6 +33,7 @@ export const Submit = styled.input`
   margin: auto;
   width: 80%;
   font-size: 1.5em;
+  cursor: pointer;
 
   ${
     media.tablet`

@@ -12,6 +12,7 @@ export const Button = styled.button`
   margin: 0 auto 10px auto;
   width: 80%;
   font-size: 1.5em;
+  cursor: pointer;
 
   ${
     media.tablet`
