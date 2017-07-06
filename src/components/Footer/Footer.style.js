@@ -15,11 +15,9 @@ export const StyledFooter = styled.footer`
   display: flex;
   font-weight: 100;
 
-  ${
-    media.tablet`
+  ${media.tablet`
       height: 30px;
-    `
-  }
+    `};
 `;
 
 export const P = styled.p`
@@ -42,6 +40,4 @@ export const A = styled.a`
   }
 `;
 
-export const Br = styled.br`
-  ${media.laptop`display: none`}
-`;
+export const Br = styled.br`${media.laptop`display: none`};`;

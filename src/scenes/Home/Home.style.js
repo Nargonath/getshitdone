@@ -23,17 +23,11 @@ export const Root = styled.div`
   padding-bottom: 70px;
   font-size: 12px;
 
-  ${
-    media.desktop`
+  ${media.desktop`
       font-size: 14px;
-    `
-  }
-
-  ${
-    media.big`
+    `} ${media.big`
       font-size: 18px;
-    `
-  }
+    `};
 `;
 
 export const Logo = styled.img`
@@ -42,22 +36,12 @@ export const Logo = styled.img`
   width: 150px;
   height: auto;
 
-  ${
-    media.tablet`
+  ${media.tablet`
       display: inline-block;
       margin: 30px 50px;
-    `
-  }
-
-  ${
-    media.desktop`
+    `} ${media.desktop`
       margin-bottom: 5%;
-    `
-  }
-
-  ${
-    media.big`
+    `} ${media.big`
       margin-bottom: 10%;
-    `
-  }
+    `};
 `;

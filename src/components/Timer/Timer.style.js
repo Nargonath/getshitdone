@@ -14,12 +14,10 @@ export const Button = styled.button`
   font-size: 1.5em;
   cursor: pointer;
 
-  ${
-    media.tablet`
+  ${media.tablet`
       width: 300px;
       margin: 0 auto 10px auto;
-    `
-  }
+    `};
 `;
 
 export const Counter = styled.div`
@@ -29,11 +27,9 @@ export const Counter = styled.div`
   font-size: 5em;
   margin-bottom: 5%;
 
-  ${
-    media.tablet`
+  ${media.tablet`
       margin-bottom: 20px;
-    `
-  }
+    `};
 `;
 
 export const TaskName = styled.p`

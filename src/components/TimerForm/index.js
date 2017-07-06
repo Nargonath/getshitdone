@@ -10,11 +10,11 @@ class TimerForm extends Component {
     this.state = { name: '', duration: '00:00' };
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
-  }
+  };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
 
     if (this.state.name === '' || this.state.duration === '00:00') {
@@ -22,24 +22,22 @@ class TimerForm extends Component {
     }
 
     this.props.onValidate(this.state);
-  }
+  };
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <Input type="text"
-               name="name"
-               value={this.state.name}
-               onChange={this.handleChange}
-               placeholder="Task name"/>
+        <Input
+          type="text"
+          name="name"
+          value={this.state.name}
+          onChange={this.handleChange}
+          placeholder="Task name"
+        />
 
-        <Input type="time"
-               name="duration"
-               value={this.state.duration}
-               onChange={this.handleChange} />
+        <Input type="time" name="duration" value={this.state.duration} onChange={this.handleChange} />
 
-        <Submit type="submit"
-               value="Start" />
+        <Submit type="submit" value="Start" />
       </form>
     );
   }

@@ -35,7 +35,7 @@ class Timer extends Component {
   }
 
   showNotification(taskName) {
-    if (!("Notification" in window)) {
+    if (!('Notification' in window)) {
       return null;
     }
 
@@ -46,17 +46,14 @@ class Timer extends Component {
 
   startTick = () => {
     this.setState({
-      timerID: setInterval(
-        () => this.tick(),
-        1000
-      ),
+      timerID: setInterval(() => this.tick(), 1000),
     });
   };
 
   stopTick = () => {
     clearInterval(this.state.timerID);
     this.setState({ timerID: null });
-  }
+  };
 
   formatCount() {
     const op = this.state.seconds < 0 ? '- ' : '';
@@ -70,18 +67,25 @@ class Timer extends Component {
   render() {
     return (
       <div>
-        <TaskName>{this.state.name}</TaskName>
-        <Counter>{this.formatCount()}</Counter>
+        <TaskName>
+          {this.state.name}
+        </TaskName>
+        <Counter>
+          {this.formatCount()}
+        </Counter>
 
-        {this.state.timerID !== null ?
-          <Button type="button" onClick={this.stopTick}>Stop</Button>
-        :
-          <div>
-            <Button type="button" onClick={this.startTick}>Restart</Button>
-            <Button type="button" onClick={this.props.onCancel}>Cancel</Button>
-          </div>
-        }
-
+        {this.state.timerID !== null
+          ? <Button type="button" onClick={this.stopTick}>
+              Stop
+            </Button>
+          : <div>
+              <Button type="button" onClick={this.startTick}>
+                Restart
+              </Button>
+              <Button type="button" onClick={this.props.onCancel}>
+                Cancel
+              </Button>
+            </div>}
       </div>
     );
   }

@@ -15,12 +15,10 @@ export const Input = styled.input`
     color: grey;
   }
 
-  ${
-    media.tablet`
+  ${media.tablet`
       width: 300px;
       margin: 40px auto;
-    `
-  }
+    `};
 `;
 
 export const Submit = styled.input`
@@ -35,10 +33,8 @@ export const Submit = styled.input`
   font-size: 1.5em;
   cursor: pointer;
 
-  ${
-    media.tablet`
+  ${media.tablet`
       margin: 40px auto;
       width: 300px;
-    `
-  }
+    `};
 `;
