@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { StyledFooter, P, A, Br } from './Footer.style';
+import githubLogo from './github.svg';
+import { StyledFooter, P, A, Br, GithubLink } from './Footer.style';
 
 function Footer() {
   return (
@@ -16,6 +17,9 @@ function Footer() {
         </A>{' '}
         (design)
       </P>
+      <GithubLink href="https://github.com/Nargonath/getshitdone" target="_blank">
+        <img src={githubLogo} alt="github getshitdone" />
+      </GithubLink>
     </StyledFooter>
   );
 }

@@ -41,3 +41,9 @@ export const A = styled.a`
 `;
 
 export const Br = styled.br`${media.laptop`display: none`};`;
+
+export const GithubLink = styled.a`
+  width: 30px;
+  height: auto;
+  margin: auto 0;
+`;
