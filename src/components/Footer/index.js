@@ -6,8 +6,15 @@ function Footer() {
   return (
     <StyledFooter>
       <P>
-        Created with &hearts; by <A href="https://twitter.com/jonas_pauthier">@Jonas_Pauthier</A> (code){' '}
-        <Br /> and <A href="http://jeremy-fermine.com/">Jeremy Fermine</A> (design)
+        Created with &hearts; by{' '}
+        <A href="https://twitter.com/jonas_pauthier" target="_blank">
+          @Jonas_Pauthier
+        </A>{' '}
+        (code) <Br /> and{' '}
+        <A href="http://jeremy-fermine.com/" target="_blank">
+          Jeremy Fermine
+        </A>{' '}
+        (design)
       </P>
     </StyledFooter>
   );
