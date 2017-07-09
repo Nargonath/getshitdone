@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import TimerForm from 'components/TimerForm';
 import Timer from 'components/Timer';
 import Footer from 'components/Footer';
-import { Root, Logo } from './Home.style';
+import { Root, Logo, LogoCtn, Title } from './Home.style';
 
 class Home extends Component {
   constructor(props) {
@@ -38,8 +38,10 @@ class Home extends Component {
   render() {
     return (
       <Root>
-        <Logo src={logo} alt="getshitdone logo timer task" />
-        <h1 hidden>Getshitdone</h1>
+        <LogoCtn>
+          <Logo src={logo} alt="getshitdone logo timer task" />
+          <Title>Get shit done</Title>
+        </LogoCtn>
 
         {this.state.task === null
           ? <TimerForm onValidate={this.onTaskCreation} />

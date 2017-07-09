@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { media } from 'styles';
+import { media, secondaryColor } from 'styles';
 
 export const Root = styled.div`
   @font-face {
@@ -18,10 +18,16 @@ export const Root = styled.div`
     font-weight: 700;
   }
 
+  @font-face {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+
   font-family: 'Open Sans';
   font-weight: 400;
   padding-bottom: 70px;
   font-size: 12px;
+  max-height: 100vh;
 
   ${media.desktop`
       font-size: 14px;
@@ -30,18 +36,31 @@ export const Root = styled.div`
     `};
 `;
 
+export const LogoCtn = styled.div`
+  margin: 10% auto 5% auto;
+  width: 7.143em;
+
+  ${media.tablet`
+      margin: 30px 50px 5vh 50px;
+    `} ${media.desktop`
+      margin-bottom: 7vh;
+    `} ${media.big`
+      margin-bottom: 18vh;
+    `};
+`;
+
+export const Title = styled.h1`
+  margin: 0;
+  font-family: 'Roboto';
+  font-weight: 400;
+  color: ${secondaryColor};
+  font-size: 1.2em;
+`;
+
 export const Logo = styled.img`
   display: block;
-  margin: 10% auto 5% auto;
-  width: 150px;
-  height: auto;
 
   ${media.tablet`
       display: inline-block;
-      margin: 30px 50px;
-    `} ${media.desktop`
-      margin-bottom: 5%;
-    `} ${media.big`
-      margin-bottom: 10%;
     `};
 `;
