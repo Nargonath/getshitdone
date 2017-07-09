@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { primaryColor, media } from 'styles';
+import { primaryColor, secondaryColor, media } from 'styles';
 
 export const Input = styled.input`
   display: block;
@@ -11,8 +11,9 @@ export const Input = styled.input`
   font-size: 1.5em;
   background-color: transparent;
 
-  &:placeholder-shown {
-    color: grey;
+  &::placeholder {
+    color: ${secondaryColor};
+    opacity: 0.6;
   }
 
   ${media.tablet`
