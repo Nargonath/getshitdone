@@ -80,7 +80,7 @@ class Timer extends Component {
             </Button>
           : <div>
               <Button type="button" onClick={this.startTick}>
-                Restart
+                Resume
               </Button>
               <Button type="button" onClick={this.props.onCancel}>
                 Cancel
