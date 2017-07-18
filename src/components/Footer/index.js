@@ -1,7 +1,11 @@
 import React from 'react';
 
 import githubLogo from './github.svg';
-import { StyledFooter, P, A, Br, GithubLink } from './Footer.style';
+import StyledFooter from './Footer';
+import P from './P';
+import A from './A';
+import Br from './Br';
+import GithubLink from './GithubLink';
 
 function Footer() {
   return (

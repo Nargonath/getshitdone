@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { func, shape, string } from 'prop-types';
 
 import { zeroPad } from 'services/string';
-import { Button, Counter, TaskName } from './Timer.style';
+import Button from './Button';
+import Counter from './Counter';
+import TaskName from './TaskName';
 
 class Timer extends Component {
   constructor(props) {

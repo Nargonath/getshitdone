@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { func } from 'prop-types';
 
-import { Input, Submit } from './TimerForm.style';
+import Input from './Input';
+import Submit from './Submit';
 
 class TimerForm extends Component {
   constructor(props) {

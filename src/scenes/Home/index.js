@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
-import logo from './logo.svg';
+import logoImg from './logo.svg';
 import TimerForm from 'components/TimerForm';
 import Timer from 'components/Timer';
 import Footer from 'components/Footer';
-import { Root, Logo, LogoCtn, Title } from './Home.style';
+import Root from './Root';
+import Logo from './Logo';
+import LogoCtn from './LogoCtn';
+import Title from './Title';
 
 class Home extends Component {
   constructor(props) {
@@ -39,7 +42,7 @@ class Home extends Component {
     return (
       <Root>
         <LogoCtn>
-          <Logo src={logo} alt="getshitdone logo timer task" />
+          <Logo src={logoImg} alt="getshitdone logo timer task" />
           <Title>Get shit done</Title>
         </LogoCtn>
 
